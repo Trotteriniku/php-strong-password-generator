@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/partials/templates/header.php';
 
-passgenerator();
+
 
 ?>
 
@@ -9,11 +9,18 @@ passgenerator();
 
 
 <main>
-    <form action="" method="GET">
-        <input type="number" name="passlen">
-        <button type="sumbit">Geneta</button>
-        <button type="reset">Annulla</button>
-    </form>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <form action="" method="POST" class=" col-sm-12 col-6 p-3 text-center bg-warning rounded-3 ">
+                <input type="number" min="6" max="20" name="passlen" class="p-2 rounded-3 border-0 "
+                    style="outline:none;">
+                <button type="sumbit" class=" btn btn-outline-dark">Genera</button>
+                <button type="reset" class=" btn btn-outline-dark">Annulla</button>
+            </form>
+        </div>
+
+    </div>
+
 </main>
 
 

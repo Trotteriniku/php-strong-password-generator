@@ -3,20 +3,24 @@
 
 function passgenerator()
 {
-    if (!empty($_GET['passlen'])) {
-        $passlen = $_GET['passlen'];
+    if (!empty($_POST['passlen'])) {
+        $passlen = $_POST['passlen'];
 
         $symbols = '!?&%$<>^+-*/()[]{}@#_=';
         $letters = 'qwertyuiopasdfghjklzxcvbnm';
+        $upletters = strtoupper($letters);
+        $numbers = '0123456789';
+        $allOptions = $symbols . $letters . $numbers . $upletters;
         $newpass = '';
         for ($i = 0; $i < $passlen; $i++) {
-            // $newpass .= substr(($letters[rand(0, strlen($letters) - 1)] . mt_rand() . $symbols[rand(0, strlen($symbols) - 1)]), rand(0, 2), 1);
+            $newpass .= substr(($symbols . $letters . $numbers . $upletters), rand(0, strlen($allOptions) - 1), 1);
         }
 
-        var_dump($newpass);
+
+        return $newpass;
     }
 
-
+    return 'Inserisci una lunghezza';
 }
 
 

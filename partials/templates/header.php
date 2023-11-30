@@ -12,6 +12,7 @@ include __DIR__ . '/../functions/function.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 
@@ -20,6 +21,19 @@ include __DIR__ . '/../functions/function.php';
         <div class="contaier text-center" style="margin: 100px auto;">
             <h1>PHP Strong Password Generator</h1>
             <h2>Genera una password sicura</h2>
+            <?php if (passgenerator()) { ?>
+
+
+                <div
+                    class=" alert  container w-50 <?php echo passgenerator() == 'Inserisci una lunghezza' ? 'alert-danger ' : 'alert-info'; ?> ">
+                    <h3>
+                        <?php echo passgenerator(); ?>
+                    </h3>
+                </div>
+
+
+            <?php } ?>
         </div>
+
 
     </header>
